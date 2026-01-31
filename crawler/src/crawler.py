@@ -21,7 +21,7 @@ from summarizer import Summarizer
 class Crawler:
     """Main crawler class for fetching AI news from configured sources."""
     
-    def __init__(self, config_path: str = "config.yaml"):
+    def __init__(self, config_path: str = "../config.yaml"):
         self.config = self._load_config(config_path)
         self.summarizer = Summarizer()
         self.entries = []
