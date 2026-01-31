@@ -28,13 +28,14 @@ class AITracker {
             {
                 //get from github pages
                 response= await fetch('/ai-landscape-tracker/data/entries.json');
+                data = await response.json();
             }
             catch (error) {
                 //fallback... local file
                 response= await fetch('../data/entries.json');
+                data = await response.json();
             }
             
-            data = await response.json();
             
             this.entries = data.entries || [];
             this.filteredEntries = [...this.entries];
