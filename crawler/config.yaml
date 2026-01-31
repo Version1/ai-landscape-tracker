@@ -25,7 +25,7 @@ sources:
     enabled: true
     selectors:
       article_list: "a[href^='/news/']"
-      title: "h4, h3"
+      title: "h4, h3, span.PublicationList-module-scss-module__KxYrHG__title"
       date: "time"
       link: null
       

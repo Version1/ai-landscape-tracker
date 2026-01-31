@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-31T13:56:26.423026Z",
+  "last_updated": "2026-01-31T14:02:40.100392Z",
   "entries": [
     {
       "id": "38a14121d1e5",
@@ -68,6 +68,17 @@
       "tags": []
     },
     {
+      "id": "e332d8a0935e",
+      "title": "ServiceNow chooses Claude to power customer apps and increase internal productivity",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/servicenow-anthropic-claude",
+      "date": "2026-01-28",
+      "content": "Jan 28, 2026AnnouncementsServiceNow chooses Claude to power customer apps and increase internal productivity",
+      "summary": "Jan 28, 2026AnnouncementsServiceNow chooses Claude to power customer apps and increase internal productivity",
+      "category": "Other",
+      "tags": []
+    },
+    {
       "id": "6b6e0f9a56e3",
       "title": "From pixels to characters: The engineering behind GitHub Copilot CLI’s animated ASCII banner",
       "source": "GitHub Copilot",
@@ -108,6 +119,17 @@
       "date": "2026-01-28",
       "content": "Learn how OpenAI protects user data when AI agents open links, preventing URL-based data exfiltration and prompt injection with built-in safeguards.",
       "summary": "Learn how OpenAI protects user data when AI agents open links, preventing URL-based data exfiltration and prompt injection with built-in safeguards.",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "id": "2ce037f2cf1a",
+      "title": "Anthropic partners with the UK Government to bring AI assistance to GOV.UK services",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/gov-UK-partnership",
+      "date": "2026-01-27",
+      "content": "Jan 27, 2026AnnouncementsAnthropic partners with the UK Government to bring AI assistance to GOV.UK services",
+      "summary": "Jan 27, 2026AnnouncementsAnthropic partners with the UK Government to bring AI assistance to GOV.UK services",
       "category": "Other",
       "tags": []
     },
@@ -178,6 +200,17 @@
       "tags": []
     },
     {
+      "id": "065c5b96747a",
+      "title": "Claude's new constitution",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-new-constitution",
+      "date": "2026-01-22",
+      "content": "Jan 22, 2026AnnouncementsClaude's new constitution",
+      "summary": "Jan 22, 2026AnnouncementsClaude's new constitution",
+      "category": "Other",
+      "tags": []
+    },
+    {
       "id": "cda15b4079f3",
       "title": "Subagents, Skills, and Image Generation",
       "source": "Cursor",
@@ -229,6 +262,28 @@
       "date": "2026-01-22",
       "content": "A data-driven report on how workers across industries use ChatGPT—covering adoption trends, top tasks, departmental patterns, and the future of AI at work.",
       "summary": "A data-driven report on how workers across industries use ChatGPT—covering adoption trends, top tasks, departmental patterns, and the future of AI at work.",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "id": "116c7bbcf7fb",
+      "title": "Mariano-Florentino Cuéllar appointed to Anthropic’s Long-Term Benefit Trust",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/mariano-florentino-long-term-benefit-trust",
+      "date": "2026-01-21",
+      "content": "Jan 21, 2026AnnouncementsMariano-Florentino Cuéllar appointed to Anthropic’s Long-Term Benefit Trust",
+      "summary": "Jan 21, 2026AnnouncementsMariano-Florentino Cuéllar appointed to Anthropic’s Long-Term Benefit Trust",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "id": "01089b2854ca",
+      "title": "Anthropic and Teach For All launch global AI training initiative for educators",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/anthropic-teach-for-all",
+      "date": "2026-01-21",
+      "content": "Jan 21, 2026AnnouncementsAnthropic and Teach For All launch global AI training initiative for educators",
+      "summary": "Jan 21, 2026AnnouncementsAnthropic and Teach For All launch global AI training initiative for educators",
       "category": "Other",
       "tags": []
     },
@@ -365,6 +420,17 @@
       "tags": []
     },
     {
+      "id": "2b621392b636",
+      "title": "Anthropic appoints Irina Ghose as Managing Director of India ahead of Bengaluru office opening",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/anthropic-appoints-irina-ghose-as-managing-director-of-india",
+      "date": "2026-01-16",
+      "content": "Jan 16, 2026AnnouncementsAnthropic appoints Irina Ghose as Managing Director of India ahead of Bengaluru office opening",
+      "summary": "Jan 16, 2026AnnouncementsAnthropic appoints Irina Ghose as Managing Director of India ahead of Bengaluru office opening",
+      "category": "Other",
+      "tags": []
+    },
+    {
       "id": "7d5e07cd3244",
       "title": "CLI Agent Modes and Cloud Handoff",
       "source": "Cursor",
@@ -409,6 +475,17 @@
       "tags": []
     },
     {
+      "id": "60998467616e",
+      "title": "How scientists are using Claude to accelerate research and discovery",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/accelerating-scientific-research",
+      "date": "2026-01-15",
+      "content": "Jan 15, 2026Case StudyHow scientists are using Claude to accelerate research and discovery",
+      "summary": "Jan 15, 2026Case StudyHow scientists are using Claude to accelerate research and discovery",
+      "category": "Other",
+      "tags": []
+    },
+    {
       "id": "8613ea01ce3a",
       "title": "Building an agentic memory system for GitHub Copilot",
       "source": "GitHub Copilot",
@@ -449,6 +526,17 @@
       "date": "2026-01-14",
       "content": "OpenAI partners with Cerebras to add 750MW of high-speed AI compute, reducing inference latency and making ChatGPT faster for real-time AI workloads.",
       "summary": "OpenAI partners with Cerebras to add 750MW of high-speed AI compute, reducing inference latency and making ChatGPT faster for real-time AI workloads.",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "id": "49cc5731d5ea",
+      "title": "Introducing Labs",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/introducing-anthropic-labs",
+      "date": "2026-01-13",
+      "content": "Jan 13, 2026AnnouncementsIntroducing Labs",
+      "summary": "Jan 13, 2026AnnouncementsIntroducing Labs",
       "category": "Other",
       "tags": []
     },
