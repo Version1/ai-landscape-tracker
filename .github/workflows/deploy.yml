@@ -47,7 +47,6 @@ jobs:
         run: |
           mkdir -p _site
           cp -r site/* _site/
-          cp -r data _site/
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
