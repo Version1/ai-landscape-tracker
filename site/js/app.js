@@ -16,6 +16,7 @@ class AITracker {
         await this.loadData();
         this.setupFilters();
         this.setupSearch();
+        this.setupFilterToggle();
         this.applyFilters();
     }
     
@@ -90,6 +91,18 @@ class AITracker {
         // Time range filter
         const timeRangeFilter = document.getElementById('time-range-filter');
         timeRangeFilter.addEventListener('change', () => this.applyFilters());
+    }
+    
+    setupFilterToggle() {
+        const toggleBtn = document.getElementById('filter-toggle');
+        const filtersSection = document.getElementById('filters');
+        
+        if (toggleBtn && filtersSection) {
+            toggleBtn.addEventListener('click', () => {
+                filtersSection.classList.toggle('expanded');
+                toggleBtn.classList.toggle('expanded');
+            });
+        }
     }
     
     setupSearch() {
