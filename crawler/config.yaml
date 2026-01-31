@@ -9,27 +9,35 @@ backfill:
   enabled: true
   start_date: "2024-01-01"
 
+# Crawler behavior settings
+crawler:
+  delay_between_requests: 1  # Seconds to wait between requests
+  max_retries: 3  # Maximum retry attempts for failed requests
+  timeout: 30  # Request timeout in seconds
+
 # Source configurations
 sources:
   - name: "Anthropic"
     type: "blog"
     url: "https://www.anthropic.com/news"
     rss_url: null
+    # Fixed: Accept-Encoding header removed to allow proper decompression
+    enabled: true
     selectors:
-      article_list: "article"
-      title: "h2, h3"
+      article_list: "a[href^='/news/']"
+      title: "h4, h3"
       date: "time"
-      link: "a"
+      link: null
       
   - name: "Cursor"
     type: "changelog"
     url: "https://www.cursor.com/changelog"
     rss_url: null
     selectors:
-      article_list: ".changelog-entry"
-      title: "h2, h3"
-      date: ".date"
-      link: "a"
+      article_list: "article"  # Standard article tags
+      title: "h1"  # Main heading
+      date: "time"  # time element with datetime attribute
+      link: "h1 a"  # Link is inside the h1
       
   - name: "GitHub Copilot"
     type: "blog"
@@ -43,8 +51,10 @@ sources:
       
   - name: "OpenAI"
     type: "blog"
-    url: "https://openai.com/blog"
-    rss_url: null
+    url: "https://openai.com/news/company-announcements/"
+    # Note: OpenAI blog has strong bot protection (403 errors)
+    # Consider using their RSS feed or API if available
+    rss_url: "https://openai.com/news/rss.xml"  # Alternative: Try main blog RSS
     selectors:
       article_list: "article"
       title: "h2, h3"

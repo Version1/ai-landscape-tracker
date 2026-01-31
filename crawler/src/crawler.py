@@ -5,11 +5,14 @@ Fetches and processes content from AI news sources.
 
 import json
 import hashlib
-from datetime import datetime
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 import feedparser
 import yaml
 from bs4 import BeautifulSoup
@@ -25,26 +28,95 @@ class Crawler:
         self.config = self._load_config(config_path)
         self.summarizer = Summarizer()
         self.entries = []
+        self.session = self._create_session()
         
     def _load_config(self, config_path: str) -> dict:
         """Load crawler configuration from YAML file."""
         with open(config_path, 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
     
+    def _create_session(self) -> requests.Session:
+        """Create requests session with retry strategy."""
+        session = requests.Session()
+        retry_strategy = Retry(
+            total=3,
+            backoff_factor=2,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["HEAD", "GET", "OPTIONS"]
+        )
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        session.mount("http://", adapter)
+        session.mount("https://", adapter)
+        return session
+    
     def _generate_id(self, url: str, title: str) -> str:
         """Generate unique ID for an entry."""
         content = f"{url}{title}"
         return hashlib.md5(content.encode()).hexdigest()[:12]
     
-    def _fetch_page(self, url: str) -> Optional[BeautifulSoup]:
-        """Fetch and parse a web page."""
+    def _clean_html(self, html_text: str) -> str:
+        """Remove HTML tags from text and clean up whitespace."""
+        if not html_text:
+            return ''
+        
+        # Parse HTML and extract text
+        soup = BeautifulSoup(html_text, 'html.parser')
+        text = soup.get_text(separator=' ', strip=True)
+        
+        # Clean up excessive whitespace
+        text = ' '.join(text.split())
+        
+        return text
+    
+    def _fetch_page(self, url: str, retry_count: int = 0, max_retries: int = None) -> Optional[BeautifulSoup]:
+        """Fetch and parse a web page with retry logic for 403 errors."""
+        if max_retries is None:
+            max_retries = self.config.get('crawler', {}).get('max_retries', 3)
+        
         try:
+            # Enhanced headers to mimic real browser behavior
+            # Note: Removed 'Accept-Encoding' to let requests handle compression automatically
             headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1',
+                'Sec-Fetch-Dest': 'document',
+                'Sec-Fetch-Mode': 'navigate',
+                'Sec-Fetch-Site': 'none',
+                'Sec-Fetch-User': '?1',
+                'Cache-Control': 'max-age=0'
             }
-            response = requests.get(url, headers=headers, timeout=30)
+            
+            # Add delay between requests to be respectful
+            if retry_count > 0:
+                delay = 2 ** retry_count  # Exponential backoff
+                print(f"  Waiting {delay}s before retry...")
+                time.sleep(delay)
+            else:
+                base_delay = self.config.get('crawler', {}).get('delay_between_requests', 1)
+                time.sleep(base_delay)
+            
+            timeout = self.config.get('crawler', {}).get('timeout', 30)
+            response = requests.get(url, headers=headers, timeout=timeout)
             response.raise_for_status()
-            return BeautifulSoup(response.text, 'html.parser')
+            
+            # Ensure we get text content (handles decompression automatically)
+            html_content = response.text
+            return BeautifulSoup(html_content, 'html.parser')
+            
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 403:
+                if retry_count < max_retries:
+                    print(f"  403 Forbidden on attempt {retry_count + 1}/{max_retries + 1}, retrying...")
+                    return self._fetch_page(url, retry_count + 1, max_retries)
+                else:
+                    print(f"Error fetching {url}: 403 Forbidden - Site may require authentication or block automated access")
+                    print(f"  Suggestion: Try using RSS feed or API if available")
+            else:
+                print(f"Error fetching {url}: {e}")
+            return None
         except Exception as e:
             print(f"Error fetching {url}: {e}")
             return None
@@ -55,11 +127,15 @@ class Crawler:
             feed = feedparser.parse(rss_url)
             entries = []
             for entry in feed.entries:
+                # Get raw content and clean HTML tags
+                raw_content = entry.get('summary', entry.get('description', ''))
+                clean_content = self._clean_html(raw_content)
+                
                 entries.append({
                     'title': entry.get('title', ''),
                     'url': entry.get('link', ''),
                     'date': entry.get('published', entry.get('updated', '')),
-                    'content': entry.get('summary', entry.get('description', ''))
+                    'content': clean_content
                 })
             return entries
         except Exception as e:
@@ -93,6 +169,11 @@ class Crawler:
     
     def crawl_source(self, source: dict) -> list:
         """Crawl a single source for articles."""
+        # Skip disabled sources
+        if not source.get('enabled', True):
+            print(f"Skipping {source['name']} (disabled)")
+            return []
+        
         print(f"Crawling {source['name']}...")
         entries = []
         
@@ -125,7 +206,14 @@ class Crawler:
                 for article in articles[:20]:  # Limit to 20 per source
                     title_elem = article.select_one(selectors.get('title', 'h2'))
                     date_elem = article.select_one(selectors.get('date', 'time'))
-                    link_elem = article.select_one(selectors.get('link', 'a'))
+                    
+                    # Handle link: if selector is None/null, the article element itself is the link
+                    link_selector = selectors.get('link', 'a')
+                    if link_selector is None:
+                        # Article element itself is the link
+                        link_elem = article if article.name == 'a' else None
+                    else:
+                        link_elem = article.select_one(link_selector)
                     
                     if not title_elem:
                         continue
@@ -135,8 +223,16 @@ class Crawler:
                     
                     # Handle relative URLs
                     if url and not url.startswith('http'):
-                        base_url = source['url'].rstrip('/')
-                        url = f"{base_url}/{url.lstrip('/')}"
+                        from urllib.parse import urlparse
+                        parsed = urlparse(source['url'])
+                        
+                        # If URL starts with '/', it's an absolute path from domain root
+                        if url.startswith('/'):
+                            url = f"{parsed.scheme}://{parsed.netloc}{url}"
+                        else:
+                            # Otherwise, it's relative to the source URL
+                            base_url = source['url'].rstrip('/')
+                            url = f"{base_url}/{url.lstrip('/')}"
                     
                     date_str = date_elem.get('datetime', date_elem.get_text(strip=True)) if date_elem else None
                     date = self._parse_date(date_str)
@@ -198,7 +294,7 @@ class Crawler:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         
         data = {
-            'last_updated': datetime.utcnow().isoformat() + 'Z',
+            'last_updated': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'entries': entries
         }
         

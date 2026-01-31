@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-31T13:39:42.591263Z",
+  "last_updated": "2026-01-31T13:56:26.423026Z",
   "entries": [
     {
       "id": "38a14121d1e5",
@@ -13,10 +13,10 @@
       "tags": []
     },
     {
-      "id": "1b3fffe32f23",
+      "id": "8eba88606990",
       "title": "D4RT: Teaching AI to see the world in four dimensions",
       "source": "Google DeepMind",
-      "url": "https://deepmind.google/discover/blog/blog/d4rt-teaching-ai-to-see-the-world-in-four-dimensions/",
+      "url": "https://deepmind.google/blog/d4rt-teaching-ai-to-see-the-world-in-four-dimensions/",
       "date": "2026-01-31",
       "content": "D4RT: Teaching AI to see the world in four dimensionsJanuary 2026ResearchLearn more",
       "summary": "D4RT: Teaching AI to see the world in four dimensionsJanuary 2026ResearchLearn more",
@@ -174,6 +174,17 @@
       "date": "2026-01-23",
       "content": "A technical deep dive into the Codex agent loop, explaining how Codex CLI orchestrates models, tools, prompts, and performance using the Responses API.",
       "summary": "A technical deep dive into the Codex agent loop, explaining how Codex CLI orchestrates models, tools, prompts, and performance using the Responses API.",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "id": "cda15b4079f3",
+      "title": "Subagents, Skills, and Image Generation",
+      "source": "Cursor",
+      "url": "https://www.cursor.com/changelog/2-4",
+      "date": "2026-01-22",
+      "content": "2.4Jan 22, 2026Subagents, Skills, and Image GenerationAgents are solving increasingly complex, long-running tasks across your codebase. This release introduces new agent harness improvements for better context management, as well as many quality-of-life fixes in the editor and CLI.#SubagentsSubagents are independent agents specialized to handle discrete parts of a parent agent's task. They run in parallel, use their own context, and can be configured with custom prompts, tool access, and models.",
+      "summary": "2.4Jan 22, 2026Subagents, Skills, and Image GenerationAgents are solving increasingly complex, long-running tasks across your codebase. This release introduces new agent harness improvements for better context management, as well as many quality-of-life fixes in the editor and CLI.#SubagentsSubagent",
       "category": "Other",
       "tags": []
     },
@@ -354,6 +365,17 @@
       "tags": []
     },
     {
+      "id": "7d5e07cd3244",
+      "title": "CLI Agent Modes and Cloud Handoff",
+      "source": "Cursor",
+      "url": "https://www.cursor.com/changelog/cli-jan-16-2026",
+      "date": "2026-01-16",
+      "content": "Jan 16, 2026CLI Agent Modes and Cloud HandoffThis release brings many of the editor’s most-loved features to theCursor CLI, along with improvements that make it easier to use.#Plan mode in CLIUsePlan modeto design your approach before coding. Cursor will ask clarifying questions to refine your plan. Get started with/planor--mode=plan.#Ask mode in CLIUseAsk modeto explore code without making changes, just like in the editor. Start asking questions with/askor--mode=ask.#Handoff to Cloud AgentsPush",
+      "summary": "Jan 16, 2026CLI Agent Modes and Cloud HandoffThis release brings many of the editor’s most-loved features to theCursor CLI, along with improvements that make it easier to use.#Plan mode in CLIUsePlan modeto design your approach before coding. Cursor will ask clarifying questions to refine your plan.",
+      "category": "Other",
+      "tags": []
+    },
+    {
       "id": "fb83ad6658a1",
       "title": "The truth left out from Elon Musk’s recent court filing",
       "source": "OpenAI",
@@ -497,6 +519,17 @@
       "tags": []
     },
     {
+      "id": "f850071bccaa",
+      "title": "New CLI Features and Improved CLI Performance",
+      "source": "Cursor",
+      "url": "https://www.cursor.com/changelog/cli-jan-08-2026",
+      "date": "2026-01-08",
+      "content": "Jan 8, 2026New CLI Features and Improved CLI PerformanceThis release introduces new CLI controls for models, MCP management, rules and commands, alongside major hooks performance improvements and bug fixes.#Model list and selectionUse the newagent modelscommand,--list-modelsflag, or/modelsslash command to list all available models and quickly switch between them.#Rules generation and managementCreate new rules and edit existing ones directly from the CLI with the/rulescommand.#Enabling MCP serve",
+      "summary": "Jan 8, 2026New CLI Features and Improved CLI PerformanceThis release introduces new CLI controls for models, MCP management, rules and commands, alongside major hooks performance improvements and bug ...",
+      "category": "Other",
+      "tags": []
+    },
+    {
       "id": "fe27c9818ed0",
       "title": "Netomi’s lessons for scaling agentic systems into the enterprise",
       "source": "OpenAI",
@@ -563,10 +596,10 @@
       "tags": []
     },
     {
-      "id": "651eb736b3c8",
+      "id": "73b51bb8ae58",
       "title": "Gemma Scope 2: helping the AI safety community deepen understanding of complex language model behavior",
       "source": "Google DeepMind",
-      "url": "https://deepmind.google/discover/blog/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/",
+      "url": "https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/",
       "date": "2025-12-31",
       "content": "Gemma Scope 2: helping the AI safety community deepen understanding of complex language model behaviorDecember 2025Responsibility & SafetyLearn more",
       "summary": "Gemma Scope 2: helping the AI safety community deepen understanding of complex language model behaviorDecember 2025Responsibility & SafetyLearn more",
@@ -574,10 +607,10 @@
       "tags": []
     },
     {
-      "id": "9feeed30a874",
+      "id": "44146f4e8028",
       "title": "Google DeepMind supports U.S. Department of Energy on Genesis: a national mission to accelerate innovation and scientific discovery",
       "source": "Google DeepMind",
-      "url": "https://deepmind.google/discover/blog/blog/google-deepmind-supports-us-department-of-energy-on-genesis/",
+      "url": "https://deepmind.google/blog/google-deepmind-supports-us-department-of-energy-on-genesis/",
       "date": "2025-12-31",
       "content": "Google DeepMind supports U.S. Department of Energy on Genesis: a national mission to accelerate innovation and scientific discoveryDecember 2025ScienceLearn more",
       "summary": "Google DeepMind supports U.S. Department of Energy on Genesis: a national mission to accelerate innovation and scientific discoveryDecember 2025ScienceLearn more.",
@@ -607,10 +640,10 @@
       "tags": []
     },
     {
-      "id": "09126776db50",
+      "id": "77223509ad01",
       "title": "Deepening our partnership with the UK AI Security Institute",
       "source": "Google DeepMind",
-      "url": "https://deepmind.google/discover/blog/blog/deepening-our-partnership-with-the-uk-ai-security-institute/",
+      "url": "https://deepmind.google/blog/deepening-our-partnership-with-the-uk-ai-security-institute/",
       "date": "2025-12-31",
       "content": "Deepening our partnership with the UK AI Security InstituteDecember 2025Responsibility & SafetyLearn more",
       "summary": "Deepening our partnership with the UK AI Security InstituteDecember 2025Responsibility & SafetyLearn more",
@@ -618,10 +651,10 @@
       "tags": []
     },
     {
-      "id": "a0c37791b6da",
+      "id": "5c303a49fa80",
       "title": "Strengthening our partnership with the UK government to support prosperity and security in the AI era",
       "source": "Google DeepMind",
-      "url": "https://deepmind.google/discover/blog/blog/strengthening-our-partnership-with-the-uk-government-to-support-prosperity-and-security-in-the-ai-era/",
+      "url": "https://deepmind.google/blog/strengthening-our-partnership-with-the-uk-government-to-support-prosperity-and-security-in-the-ai-era/",
       "date": "2025-12-31",
       "content": "Strengthening our partnership with the UK government to support prosperity and security in the AI eraDecember 2025Responsibility & SafetyLearn more",
       "summary": "Strengthening our partnership with the UK government to support prosperity and security in the AI eraDecember 2025Responsibility & SafetyLearn more",
@@ -629,10 +662,10 @@
       "tags": []
     },
     {
-      "id": "c3fd1cb22af4",
+      "id": "109938199a22",
       "title": "FACTS Benchmark Suite: Systematically evaluating the factuality of large language models",
       "source": "Google DeepMind",
-      "url": "https://deepmind.google/discover/blog/blog/facts-benchmark-suite-systematically-evaluating-the-factuality-of-large-language-models/",
+      "url": "https://deepmind.google/blog/facts-benchmark-suite-systematically-evaluating-the-factuality-of-large-language-models/",
       "date": "2025-12-31",
       "content": "FACTS Benchmark Suite: Systematically evaluating the factuality of large language modelsDecember 2025Responsibility & SafetyLearn more",
       "summary": "FACTS Benchmark Suite: Systematically evaluating the factuality of large language modelsDecember 2025Responsibility & SafetyLearn more",
@@ -640,10 +673,10 @@
       "tags": []
     },
     {
-      "id": "45c3680a1ef0",
+      "id": "c00f2be9639c",
       "title": "Engineering more resilient crops for a warming climate",
       "source": "Google DeepMind",
-      "url": "https://deepmind.google/discover/blog/blog/engineering-more-resilient-crops-for-a-warming-climate/",
+      "url": "https://deepmind.google/blog/engineering-more-resilient-crops-for-a-warming-climate/",
       "date": "2025-12-31",
       "content": "Engineering more resilient crops for a warming climateDecember 2025ScienceLearn more",
       "summary": "Engineering more resilient crops for a warming climateDecember 2025ScienceLearn more",
@@ -673,6 +706,17 @@
       "tags": []
     },
     {
+      "id": "e2c2e9ffe95b",
+      "title": "Layout Customization and Stability Improvements",
+      "source": "Cursor",
+      "url": "https://www.cursor.com/changelog/2-3",
+      "date": "2025-12-22",
+      "content": "2.3Dec 22, 2025Layout Customization and Stability ImprovementsFor this holiday release, we've focused entirely on fixing bugs and improving stability.This includes the core agent, layout controls, viewing code diffs, and more. We will be slowly rolling these updates out over the week, ensuring there are no regressions during your holiday coding.#Stability improvementsStability (7)↓↑Agents (15)↓↑Layout controls (11)↓↑Code review (4)↓↑MCP (2)↓↑#Layout customizationIt's now easier to customize your",
+      "summary": "2.3Dec 22, 2025Layout Customization and Stability ImprovementsFor this holiday release, we've focused entirely on fixing bugs and improving stability.This includes the core agent, layout controls, viewing code diffs, and more. We will be slowly rolling these updates out over the week, ensuring there",
+      "category": "Other",
+      "tags": []
+    },
+    {
       "id": "d40ada0f5c54",
       "title": "Continuously hardening ChatGPT Atlas against prompt injection",
       "source": "OpenAI",
@@ -691,6 +735,17 @@
       "date": "2025-12-22",
       "content": "More than one million customers around the world now use OpenAI to empower their teams and unlock new opportunities. This post highlights how companies like PayPal, Virgin Atlantic, BBVA, Cisco, Moderna, and Canva are transforming the way work gets done with AI.",
       "summary": "More than one million customers around the world now use OpenAI to empower their teams and unlock new opportunities. This post highlights how companies like PayPal, Virgin Atlantic, BBVA, Cisco, Moderna, and Canva are transforming the way work gets done with AI.",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "id": "38c8ed382045",
+      "title": "Enterprise Insights, Billing Groups, Service Accounts, and Improved Security Controls",
+      "source": "Cursor",
+      "url": "https://www.cursor.com/changelog/enterprise-dec-2025",
+      "date": "2025-12-18",
+      "content": "Dec 18, 2025Enterprise Insights, Billing Groups, Service Accounts, and Improved Security ControlsMany of the largest software companies in the world have adoptedCursor for Enterprise. Here are some of the new features we're releasing today:#Conversation insightsCursor can now analyze the code and context in each agent session to understand the type of work that is being done, including:Category:Bug fixes, refactoring, explanationWork Type:Maintenance, bug fixing, new featuresComplexity:Difficult",
+      "summary": "Dec 18, 2025Enterprise Insights, Billing Groups, Service Accounts, and Improved Security ControlsMany of the largest software companies in the world have adoptedCursor for Enterprise. Here are some of the new features we're releasing today:#Conversation insightsCursor can now analyze the code and co",
       "category": "Other",
       "tags": []
     },
@@ -1146,10 +1201,10 @@
       "tags": []
     },
     {
-      "id": "beca267e2833",
+      "id": "53602cd20180",
       "title": "AlphaFold: Five years of impact",
       "source": "Google DeepMind",
-      "url": "https://deepmind.google/discover/blog/blog/alphafold-five-years-of-impact/",
+      "url": "https://deepmind.google/blog/alphafold-five-years-of-impact/",
       "date": "2025-11-30",
       "content": "AlphaFold: Five years of impactNovember 2025ScienceLearn more",
       "summary": "AlphaFold: Five years of impactNovember 2025ScienceLearn more",
@@ -1157,10 +1212,10 @@
       "tags": []
     },
     {
-      "id": "d6362ea15c85",
+      "id": "1ff6cac6f7a7",
       "title": "Revealing a key protein behind heart disease",
       "source": "Google DeepMind",
-      "url": "https://deepmind.google/discover/blog/blog/revealing-a-key-protein-behind-heart-disease/",
+      "url": "https://deepmind.google/blog/revealing-a-key-protein-behind-heart-disease/",
       "date": "2025-11-30",
       "content": "Revealing a key protein behind heart diseaseNovember 2025ScienceLearn more",
       "summary": "Revealing a key protein behind heart diseaseNovember 2025ScienceLearn more",
@@ -1168,10 +1223,10 @@
       "tags": []
     },
     {
-      "id": "4341075fc933",
+      "id": "c75bffd117da",
       "title": "Breeding healthier and stronger honeybees",
       "source": "Google DeepMind",
-      "url": "https://deepmind.google/discover/blog/blog/breeding-healthier-and-stronger-honeybees/",
+      "url": "https://deepmind.google/blog/breeding-healthier-and-stronger-honeybees/",
       "date": "2025-11-30",
       "content": "Breeding healthier and stronger honeybeesNovember 2025ScienceLearn more",
       "summary": "Breeding healthier and stronger honeybeesNovember 2025ScienceLearn more",
@@ -1263,6 +1318,17 @@
       "date": "2025-11-25",
       "content": "JetBrains is integrating GPT-5 across its coding tools, helping millions of developers design, reason, and build software faster.",
       "summary": "JetBrains is integrating GPT-5 across its coding tools, helping millions of developers design, reason, and build software faster.",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "id": "aa49717dace5",
+      "title": "Introducing Claude Opus 4.5",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-opus-4-5",
+      "date": "2025-11-24",
+      "content": "AnnouncementsNov 24, 2025Introducing Claude Opus 4.5The best model in the world for coding, agents, and computer use, with meaningful improvements to everyday tasks like slides and spreadsheets. Claude Opus 4.5 delivers frontier performance and dramatically improved token efficiency.",
+      "summary": "AnnouncementsNov 24, 2025Introducing Claude Opus 4.5The best model in the world for coding, agents, and computer use, with meaningful improvements to everyday tasks like slides and spreadsheets. Claude Opus 4.5 delivers frontier performance and dramatically improved token efficiency.",
       "category": "Other",
       "tags": []
     },
@@ -1883,6 +1949,17 @@
       "tags": []
     },
     {
+      "id": "cf7c8acda9cb",
+      "title": "Introducing Claude Haiku 4.5",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-haiku-4-5",
+      "date": "2025-10-15",
+      "content": "ProductOct 15, 2025Introducing Claude Haiku 4.5Claude Haiku 4.5 matches state-of-the-art coding capabilities from months ago while delivering unprecedented speed and cost-efficiency for complex tasks.",
+      "summary": "ProductOct 15, 2025Introducing Claude Haiku 4.5Claude Haiku 4.5 matches state-of-the-art coding capabilities from months ago while delivering unprecedented speed and cost-efficiency for complex tasks.",
+      "category": "Other",
+      "tags": []
+    },
+    {
       "id": "56eda4d3cdf0",
       "title": "Plex Coffee delivers fast service and personal connections with ChatGPT Business",
       "source": "OpenAI",
@@ -2099,6 +2176,17 @@
       "date": "2025-09-30",
       "content": "Our latest video generation model is more physically accurate, realistic, and controllable than prior systems. It also features synchronized dialogue and sound effects. Create with it in the new Sora app.",
       "summary": "Our latest video generation model is more physically accurate, realistic, and controllable than prior systems. It also features synchronized dialogue and sound effects.",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "id": "fd760e9076a6",
+      "title": "Introducing Claude Sonnet 4.5",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-5",
+      "date": "2025-09-29",
+      "content": "AnnouncementsSep 29, 2025Introducing Claude Sonnet 4.5Claude Sonnet 4.5 sets new benchmark records in coding, reasoning, and computer use while being Anthropic's most aligned model, accompanied by the release of the Claude Agent SDK for building capable agents",
+      "summary": "AnnouncementsSep 29, 2025Introducing Claude Sonnet 4.5Claude Sonnet 4.5 sets new benchmark records in coding, reasoning, and computer use while being Anthropic's most aligned model, accompanied by the...",
       "category": "Other",
       "tags": []
     },
@@ -2506,6 +2594,17 @@
       "date": "2025-09-04",
       "content": "OpenAI is launching a Jobs Platform and new Certifications to connect workers with jobs, training, and certifications. Learn how we’re expanding economic opportunity and making AI skills more accessible.",
       "summary": "OpenAI is launching a Jobs Platform and new Certifications to connect workers with jobs, training, and certifications. Learn how we’re expanding economic opportunity and making AI skills more accessible.",
+      "category": "Other",
+      "tags": []
+    },
+    {
+      "id": "5b7cb092fb03",
+      "title": "Anthropic raises $13B Series F at $183B post-money valuation",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation",
+      "date": "2025-09-02",
+      "content": "AnnouncementsSep 2, 2025Anthropic raises $13B Series F at $183B post-money valuationAnthropic raised $13 billion in a Series F round at a $183 billion valuation to expand enterprise offerings, safety research, and international growth as revenue grew from $1 billion to over $5 billion in eight months.",
+      "summary": "AnnouncementsSep 2, 2025Anthropic raises $13B Series F at $183B post-money valuationAnthropic raised $13 billion in a Series F round at a $183 billion valuation to expand enterprise offerings, safety ...",
       "category": "Other",
       "tags": []
     },
