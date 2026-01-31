@@ -21,8 +21,19 @@ class AITracker {
     
     async loadData() {
         try {
-            const response = await fetch('/ai-landscape-tracker/data/entries.json');
-            const data = await response.json();
+            var response;
+            var data;
+            
+            try
+            {
+                response= await fetch('/ai-landscape-tracker/data/entries.json');
+                data = await response.json();
+            }
+            catch (error) {
+                response= await fetch('../data/entries.json');
+                data = await response.json();
+            }
+            
             
             this.entries = data.entries || [];
             this.filteredEntries = [...this.entries];
