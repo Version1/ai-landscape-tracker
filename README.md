@@ -169,6 +169,24 @@ All other AI developments including:
 - **`summarize_entries.py`**: AI-powered summarization (requires API key)
 - **`processing_summary.md`**: Latest processing statistics
 
+## Known Issues & Improvements
+
+### Content Extraction Quality
+The crawler currently extracts all text from article elements, including navigation UI elements (buttons, labels, etc.). This results in content like:
+
+```
+"Project Genie: Experimenting with infinite, interactive worldsJanuary 2026ModelsLearn more"
+```
+
+**Impact**: Summary field may contain UI text and lack proper sentence punctuation.
+
+**Workarounds**:
+1. Use AI-powered summarization to clean and restructure content
+2. Improve crawler selectors to target main content areas only
+3. Add post-processing to remove common UI patterns
+
+**Future Enhancement**: Implement content-specific selectors per source to extract article body text while excluding navigation/UI elements.
+
 ## License
 
 Internal use - Version 1

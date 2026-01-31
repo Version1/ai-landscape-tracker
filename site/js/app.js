@@ -78,6 +78,11 @@ class AITracker {
             categoryFilter.appendChild(option);
         });
         
+        // Set default category to "Agentic AI"
+        if (this.categories.has('Agentic AI')) {
+            categoryFilter.value = 'Agentic AI';
+        }
+        
         // Add event listeners
         sourceFilter.addEventListener('change', () => this.applyFilters());
         categoryFilter.addEventListener('change', () => this.applyFilters());
