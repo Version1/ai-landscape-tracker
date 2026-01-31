@@ -67,7 +67,7 @@ body {
 .header {
     background-color: var(--midnight-black);
     color: var(--text-light);
-    padding: var(--space-lg) var(--space-xl);
+    padding: var(--space-md) var(--space-xl);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -79,6 +79,14 @@ body {
     display: flex;
     align-items: center;
     gap: var(--space-lg);
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    flex-shrink: 0;
 }
 
 .logo {
@@ -97,10 +105,32 @@ body {
     letter-spacing: 0.05em;
 }
 
+.logo-image {
+    height: 40px;
+    width: auto;
+    display: block;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+.find-out-more {
+    color: var(--v1-blue);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.find-out-more:hover {
+    color: var(--v1-teal);
+    text-decoration: underline;
+}
+
 .site-title {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 600;
+    flex-grow: 1;
 }
 
 /* ========================================
