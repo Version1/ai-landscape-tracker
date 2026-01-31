@@ -68,6 +68,122 @@ class Crawler:
         
         return text
     
+    def _extract_article_content(self, article_elem) -> str:
+        """Extract clean content from article element, excluding UI elements."""
+        if not article_elem:
+            return ''
+        
+        # Clone to avoid modifying original
+        article = BeautifulSoup(str(article_elem), 'html.parser')
+        
+        # Remove common UI elements
+        for selector in ['nav', 'button', '.button', 'footer', 'header', 
+                        '.nav', '.navigation', '.menu', '.sidebar',
+                        '.cookie', '.banner', '.ad', '.advertisement',
+                        'script', 'style', 'iframe', 'noscript']:
+            for elem in article.select(selector):
+                elem.decompose()
+        
+        # Remove elements with common UI text patterns
+        ui_text_patterns = [
+            'learn more', 'read more', 'continue reading',
+            'share', 'tweet', 'like', 'subscribe', 'follow',
+            'previous', 'next', 'back', 'home',
+            'your browser does not support the video tag',
+            'your browser does not support',
+            'models', 'research', 'announcements'
+        ]
+        
+        # Collect elements to remove (don't remove during iteration)
+        elements_to_remove = []
+        for elem in article.find_all(string=True):
+            text = elem.strip().lower()
+            # Check if text contains any of the patterns
+            for pattern in ui_text_patterns:
+                if pattern in text or text == pattern:
+                    parent = elem.parent
+                    if parent and parent not in elements_to_remove:
+                        elements_to_remove.append(parent)
+                    break
+        
+        # Now remove collected elements
+        for elem in elements_to_remove:
+            elem.decompose()
+        
+        # Prioritize main content areas
+        content = None
+        for selector in ['article', 'main', '[role="main"]', '.content', 
+                        '.article-content', '.post-content', '.entry-content',
+                        'p']:
+            elements = article.select(selector)
+            if elements:
+                # Get paragraphs for better content quality
+                paragraphs = []
+                for elem in elements:
+                    if elem.name == 'p':
+                        text = elem.get_text(strip=True)
+                        if len(text) > 20:  # Only meaningful paragraphs
+                            paragraphs.append(text)
+                    else:
+                        # Extract paragraphs from within the element
+                        for p in elem.find_all('p'):
+                            text = p.get_text(strip=True)
+                            if len(text) > 20:
+                                paragraphs.append(text)
+                
+                if paragraphs:
+                    content = ' '.join(paragraphs[:5])  # First 5 paragraphs
+                    break
+        
+        # Fallback to cleaned full text if no paragraphs found
+        if not content:
+            content = article.get_text(separator=' ', strip=True)
+        
+        # Clean up whitespace and limit length
+        content = ' '.join(content.split())
+        content = content[:800]  # Increased from 500 for better context
+        
+        # Remove common UI patterns from final content using regex
+        import re
+        ui_patterns = [
+            r'january \d{4}',
+            r'february \d{4}',
+            r'march \d{4}',
+            r'april \d{4}',
+            r'may \d{4}',
+            r'june \d{4}',
+            r'july \d{4}',
+            r'august \d{4}',
+            r'september \d{4}',
+            r'october \d{4}',
+            r'november \d{4}',
+            r'december \d{4}',
+            r'learn more',
+            r'read more',
+            r'models',
+            r'research',
+            r'announcements',
+            r'your browser does not support the video tag\.?'
+        ]
+        
+        for pattern in ui_patterns:
+            content = re.sub(pattern, '', content, flags=re.IGNORECASE)
+        
+        # Clean whitespace again after removals
+        content = ' '.join(content.split())
+        
+        # Ensure it ends with proper punctuation
+        if content and content[-1] not in '.!?':
+            # Try to find last sentence ending
+            for i in range(len(content)-1, max(len(content)-100, 0), -1):
+                if content[i] in '.!?':
+                    content = content[:i+1]
+                    break
+            else:
+                content = content + '.'
+        
+        return content
+    
     def _fetch_page(self, url: str, retry_count: int = 0, max_retries: int = None) -> Optional[BeautifulSoup]:
         """Fetch and parse a web page with retry logic for 403 errors."""
         if max_retries is None:
@@ -130,6 +246,30 @@ class Crawler:
                 # Get raw content and clean HTML tags
                 raw_content = entry.get('summary', entry.get('description', ''))
                 clean_content = self._clean_html(raw_content)
+                
+                # Apply same cleaning as article extraction
+                if clean_content:
+                    # Remove common UI patterns (case-insensitive)
+                    ui_patterns = ['learn more', 'read more', 'continue reading',
+                                 'share', 'tweet', 'subscribe', 'follow',
+                                 'your browser does not support the video tag']
+                    for pattern in ui_patterns:
+                        # Case-insensitive replacement
+                        import re
+                        clean_content = re.sub(re.escape(pattern), '', clean_content, flags=re.IGNORECASE)
+                    
+                    # Clean whitespace
+                    clean_content = ' '.join(clean_content.split())
+                    
+                    # Limit length and ensure proper ending
+                    clean_content = clean_content[:800]
+                    if clean_content and clean_content[-1] not in '.!?':
+                        for i in range(len(clean_content)-1, max(len(clean_content)-100, 0), -1):
+                            if clean_content[i] in '.!?':
+                                clean_content = clean_content[:i+1]
+                                break
+                        else:
+                            clean_content = clean_content + '.'
                 
                 entries.append({
                     'title': entry.get('title', ''),
@@ -240,13 +380,16 @@ class Crawler:
                     if not self._is_within_backfill_range(date):
                         continue
                     
+                    # Extract clean content
+                    content = self._extract_article_content(article)
+                    
                     entries.append({
                         'id': self._generate_id(url, title),
                         'title': title,
                         'source': source['name'],
                         'url': url,
                         'date': date,
-                        'content': article.get_text(strip=True)[:500],
+                        'content': content,
                         'summary': None,
                         'category': '',
                         'tags': []
