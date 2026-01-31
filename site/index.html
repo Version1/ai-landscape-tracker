@@ -37,6 +37,15 @@
                 </select>
             </div>
             <div class="filter-group">
+                <label for="time-range-filter">Time Range:</label>
+                <select id="time-range-filter">
+                    <option value="all">All Time</option>
+                    <option value="week" selected>Last Week</option>
+                    <option value="month">Last Month</option>
+                    <option value="6months">Last 6 Months</option>
+                </select>
+            </div>
+            <div class="filter-group">
                 <input type="text" id="search-input" placeholder="Search...">
             </div>
             <div class="last-updated" id="last-updated"></div>
