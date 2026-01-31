@@ -107,13 +107,11 @@ flowchart LR
 
 ### 4. Automation (GitHub Actions)
 
-**Purpose:** Scheduled crawler execution and site updates
+**Purpose:** Site updates
 
 **Workflow:**
 1. Scheduled trigger (every 6-12 hours or daily)
-2. Run crawler script
-3. Commit new/updated data files
-4. Trigger GitHub Pages rebuild
+2. Trigger GitHub Pages rebuild
 
 ---
 
@@ -141,7 +139,8 @@ flowchart LR
 │
 ├── .github/
 │   └── workflows/
-│       └── crawl-and-deploy.yml
+│       └── deploy.yml
+│       └── test.yml
 │
 └── Documentation/              # Project docs
 ```

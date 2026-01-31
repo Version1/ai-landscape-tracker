@@ -4,7 +4,6 @@ A curated, automatically updated portal tracking developments in the Agentic AI 
 
 ## Features
 
-- **Automated Updates**: Crawler runs every 12 hours via GitHub Actions
 - **AI Summaries**: Brief 2-3 sentence summaries generated using GitHub Copilot SDK
 - **Timeline View**: Chronological feed with filtering and search
 - **Version 1 Branding**: Professional design following brand guidelines
