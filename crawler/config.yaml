@@ -1,0 +1,72 @@
+# Agentic AI Landscape Tracker - Crawler Configuration
+
+# Data output settings
+output:
+  path: "../data/entries.json"
+  
+# Backfill settings
+backfill:
+  enabled: true
+  start_date: "2024-01-01"
+
+# Source configurations
+sources:
+  - name: "Anthropic"
+    type: "blog"
+    url: "https://www.anthropic.com/news"
+    rss_url: null
+    selectors:
+      article_list: "article"
+      title: "h2, h3"
+      date: "time"
+      link: "a"
+      
+  - name: "Cursor"
+    type: "changelog"
+    url: "https://www.cursor.com/changelog"
+    rss_url: null
+    selectors:
+      article_list: ".changelog-entry"
+      title: "h2, h3"
+      date: ".date"
+      link: "a"
+      
+  - name: "GitHub Copilot"
+    type: "blog"
+    url: "https://github.blog/tag/github-copilot/"
+    rss_url: "https://github.blog/tag/github-copilot/feed/"
+    selectors:
+      article_list: "article"
+      title: "h2"
+      date: "time"
+      link: "a"
+      
+  - name: "OpenAI"
+    type: "blog"
+    url: "https://openai.com/blog"
+    rss_url: null
+    selectors:
+      article_list: "article"
+      title: "h2, h3"
+      date: "time"
+      link: "a"
+
+  - name: "Google DeepMind"
+    type: "blog"
+    url: "https://deepmind.google/discover/blog/"
+    rss_url: null
+    selectors:
+      article_list: "article"
+      title: "h3"
+      date: "time"
+      link: "a"
+
+# Categories for classification
+categories:
+  - "Release"
+  - "Feature"
+  - "Research"
+  - "API"
+  - "Model"
+  - "Tool"
+  - "Other"

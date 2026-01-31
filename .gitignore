@@ -83,3 +83,8 @@ Thumbs.db
 
 # GitHub Copilot SDK cache
 .copilot/
+.cursor/*
+Councils of Agents/*
+AGENTS.md
+.github/*
+Documentation/Initial Docs/*
