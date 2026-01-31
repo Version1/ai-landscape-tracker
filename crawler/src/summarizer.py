@@ -25,6 +25,24 @@ class Summarizer:
             print(f"Warning: Could not initialize Copilot SDK: {e}")
             self.client = None
     
+    def categorize(self, title: str, content: str) -> str:
+        """
+        Categorize content as 'Agentic AI' or 'Other'.
+        Returns empty string if Copilot SDK unavailable.
+        
+        Args:
+            title: Article title
+            content: Article content/excerpt
+            
+        Returns:
+            Category string: 'Agentic AI', 'Other', or '' (if SDK unavailable)
+        """
+        # Only categorize if Copilot SDK available
+        if not self.client:
+            return ''
+        
+        return self._categorize_with_copilot(title, content)
+    
     def summarize(self, title: str, content: str, source: str) -> str:
         """
         Generate a 2-3 sentence summary of an AI announcement.
@@ -46,6 +64,46 @@ class Summarizer:
         
         # Fallback: extract first meaningful sentences
         return self._fallback_summarize(title, content, source)
+    
+    def _categorize_with_copilot(self, title: str, content: str) -> str:
+        """Categorize content using GitHub Copilot SDK."""
+        prompt = f"""Categorize this AI/tech announcement as either 'Agentic AI' or 'Other'.
+
+Agentic AI refers to AI systems that can:
+- Autonomously plan and execute multi-step tasks
+- Make decisions and take actions on behalf of users
+- Use tools, APIs, or interact with environments
+- Have memory and context awareness across interactions
+- Work as AI agents, autonomous agents, or multi-agent systems
+
+Examples of Agentic AI: AI agents, autonomous coding assistants, multi-agent frameworks, 
+tool-using AI systems, AI that can plan and execute workflows.
+
+Examples of Other: General LLMs, image generators, simple chatbots, model updates without 
+agent capabilities, infrastructure/platform news.
+
+Title: {title}
+Content: {content[:800]}
+
+Respond with ONLY 'Agentic AI' or 'Other':"""
+        
+        try:
+            response = self.client.complete(
+                prompt=prompt,
+                max_tokens=10,
+                temperature=0.1
+            )
+            category = response.strip()
+            # Validate response
+            if category in ['Agentic AI', 'Other']:
+                return category
+            # If response contains the category
+            if 'Agentic AI' in category:
+                return 'Agentic AI'
+            return 'Other'
+        except Exception as e:
+            print(f"Copilot categorization failed: {e}")
+            return 'Other'
     
     def _summarize_with_copilot(self, title: str, content: str, source: str) -> str:
         """Generate summary using GitHub Copilot SDK."""

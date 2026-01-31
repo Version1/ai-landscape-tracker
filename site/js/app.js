@@ -16,7 +16,7 @@ class AITracker {
         await this.loadData();
         this.setupFilters();
         this.setupSearch();
-        this.render();
+        this.applyFilters();
     }
     
     async loadData() {
@@ -81,6 +81,10 @@ class AITracker {
         // Add event listeners
         sourceFilter.addEventListener('change', () => this.applyFilters());
         categoryFilter.addEventListener('change', () => this.applyFilters());
+        
+        // Time range filter
+        const timeRangeFilter = document.getElementById('time-range-filter');
+        timeRangeFilter.addEventListener('change', () => this.applyFilters());
     }
     
     setupSearch() {
@@ -96,7 +100,27 @@ class AITracker {
     applyFilters() {
         const sourceValue = document.getElementById('source-filter').value;
         const categoryValue = document.getElementById('category-filter').value;
+        const timeRangeValue = document.getElementById('time-range-filter').value;
         const searchValue = document.getElementById('search-input').value.toLowerCase();
+        
+        // Calculate time range cutoff
+        const now = new Date();
+        let cutoffDate = null;
+        
+        switch(timeRangeValue) {
+            case 'week':
+                cutoffDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                break;
+            case 'month':
+                cutoffDate = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+                break;
+            case '6months':
+                cutoffDate = new Date(now.getTime() - 180 * 24 * 60 * 60 * 1000);
+                break;
+            case 'all':
+            default:
+                cutoffDate = null;
+        }
         
         this.filteredEntries = this.entries.filter(entry => {
             // Source filter
@@ -107,6 +131,14 @@ class AITracker {
             // Category filter
             if (categoryValue !== 'all' && entry.category !== categoryValue) {
                 return false;
+            }
+            
+            // Time range filter
+            if (cutoffDate && entry.date) {
+                const entryDate = new Date(entry.date);
+                if (entryDate < cutoffDate) {
+                    return false;
+                }
             }
             
             // Search filter

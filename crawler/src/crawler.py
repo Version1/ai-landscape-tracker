@@ -193,7 +193,7 @@ class Crawler:
                     'date': date,
                     'content': entry['content'],
                     'summary': None,
-                    'category': 'Other',
+                    'category': '',
                     'tags': []
                 })
         else:
@@ -248,7 +248,7 @@ class Crawler:
                         'date': date,
                         'content': article.get_text(strip=True)[:500],
                         'summary': None,
-                        'category': 'Other',
+                        'category': '',
                         'tags': []
                     })
         
@@ -277,14 +277,20 @@ class Crawler:
         return unique_entries
     
     def generate_summaries(self, entries: list) -> list:
-        """Generate summaries for entries using Copilot SDK."""
-        print("Generating summaries...")
+        """Generate summaries and categorize entries using Copilot SDK."""
+        print("Generating summaries and categories...")
         for entry in entries:
             if not entry.get('summary') and entry.get('content'):
                 entry['summary'] = self.summarizer.summarize(
                     title=entry['title'],
                     content=entry['content'],
                     source=entry['source']
+                )
+            # Categorize entry (only if Copilot SDK available)
+            if not entry.get('category') and entry.get('content'):
+                entry['category'] = self.summarizer.categorize(
+                    title=entry['title'],
+                    content=entry['content']
                 )
         return entries
     
