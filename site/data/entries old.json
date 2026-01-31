@@ -1,0 +1,75 @@
+{
+  "last_updated": "2026-01-31T12:00:00Z",
+  "entries": [
+    {
+      "id": "abc123def456",
+      "title": "GitHub Copilot SDK Now Available in Technical Preview",
+      "source": "GitHub Copilot",
+      "url": "https://github.blog/2026-01-30-copilot-sdk-technical-preview/",
+      "date": "2026-01-30",
+      "summary": "GitHub has released the Copilot SDK in technical preview, enabling developers to embed Copilot's agentic workflows into their applications. The SDK supports Python, TypeScript, Go, and .NET, exposing the same engine behind Copilot CLI as a programmable interface.",
+      "category": "Release",
+      "tags": ["SDK", "API", "Agents"]
+    },
+    {
+      "id": "def456ghi789",
+      "title": "Claude 3.5 Opus Released with Enhanced Reasoning",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-3-5-opus",
+      "date": "2026-01-28",
+      "summary": "Anthropic has launched Claude 3.5 Opus, their most capable model featuring significantly improved reasoning, extended context windows up to 500K tokens, and enhanced tool use capabilities. The model shows particular strength in complex multi-step tasks.",
+      "category": "Model",
+      "tags": ["Claude", "LLM", "Reasoning"]
+    },
+    {
+      "id": "ghi789jkl012",
+      "title": "Cursor 0.50: Background Agents and Multi-File Editing",
+      "source": "Cursor",
+      "url": "https://www.cursor.com/changelog/0.50",
+      "date": "2026-01-25",
+      "summary": "Cursor 0.50 introduces background agents that can autonomously work on tasks while you continue coding. New multi-file editing capabilities allow agents to refactor across entire codebases with improved context awareness.",
+      "category": "Feature",
+      "tags": ["IDE", "Agents", "Refactoring"]
+    },
+    {
+      "id": "jkl012mno345",
+      "title": "OpenAI Announces GPT-5 Turbo with Native Tool Orchestration",
+      "source": "OpenAI",
+      "url": "https://openai.com/blog/gpt-5-turbo",
+      "date": "2026-01-22",
+      "summary": "GPT-5 Turbo brings native tool orchestration, allowing the model to autonomously plan and execute multi-tool workflows. Response latency improved by 40% compared to GPT-4 Turbo while maintaining superior accuracy.",
+      "category": "Model",
+      "tags": ["GPT-5", "Tools", "Performance"]
+    },
+    {
+      "id": "mno345pqr678",
+      "title": "Gemini 2.5 Pro: Multimodal Agents with Real-Time Vision",
+      "source": "Google DeepMind",
+      "url": "https://deepmind.google/discover/blog/gemini-2-5-pro",
+      "date": "2026-01-18",
+      "summary": "Google DeepMind releases Gemini 2.5 Pro featuring real-time vision capabilities for agentic applications. The model can process live video streams and make decisions in real-time, opening new possibilities for autonomous systems.",
+      "category": "Model",
+      "tags": ["Gemini", "Vision", "Multimodal"]
+    },
+    {
+      "id": "pqr678stu901",
+      "title": "MCP Registry: Centralized Tool Discovery for AI Agents",
+      "source": "GitHub Copilot",
+      "url": "https://github.blog/2026-01-15-mcp-registry-announcement/",
+      "date": "2026-01-15",
+      "summary": "GitHub introduces the MCP Registry, a centralized marketplace for discovering and integrating external tools with AI agents. Developers can now browse, install, and configure MCP servers directly from the GitHub interface.",
+      "category": "Tool",
+      "tags": ["MCP", "Registry", "Integration"]
+    },
+    {
+      "id": "stu901vwx234",
+      "title": "Claude Computer Use Exits Beta with Enterprise Features",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/computer-use-general-availability",
+      "date": "2026-01-10",
+      "summary": "Anthropic's Computer Use capability is now generally available with new enterprise features including audit logging, sandboxed execution environments, and granular permission controls for autonomous desktop interactions.",
+      "category": "Feature",
+      "tags": ["Computer Use", "Enterprise", "Automation"]
+    }
+  ]
+}
