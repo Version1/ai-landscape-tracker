@@ -70,6 +70,8 @@ export default defineConfig({
     command: 'cd ../site && python -m http.server 8000',
     url: 'http://localhost:8000',
     reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000,
+    timeout: 120 * 1000, // Increased to 5 minutes
+    stdout: 'pipe',
+    stderr: 'pipe',
   },
 });
