@@ -163,7 +163,15 @@ test.describe('Agentic AI Landscape Tracker - Site Tests', () => {
     
     // Check that content is still visible and readable
     await expect(page.locator('.header')).toBeVisible();
+    
+    // On mobile, filters are collapsed by default - check toggle button is visible
+    await expect(page.locator('.filter-toggle')).toBeVisible();
+    
+    // Expand filters and verify they become visible
+    await page.click('.filter-toggle');
     await expect(page.locator('.filters')).toBeVisible();
+    await expect(page.locator('.filters')).toHaveClass(/expanded/);
+    
     await expect(page.locator('.entry-card').first()).toBeVisible();
   });
 
