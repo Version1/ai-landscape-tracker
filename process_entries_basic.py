@@ -60,10 +60,10 @@ def analyze_entry(entry):
     # Basic categorization logic
     if agentic_score >= 2:
         category = "Agentic AI"
-        confidence = min(70 + (agentic_score * 5), 95)
+        confidence = min(75 + (agentic_score * 5), 95)
     elif agentic_score == 1:
         category = "Agentic AI"
-        confidence = 60
+        confidence = 75
     else:
         category = "Other"
         confidence = 75
