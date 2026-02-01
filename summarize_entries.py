@@ -1,12 +1,9 @@
 import json
-import anthropic
-import os
+import asyncio
 from pathlib import Path
+from copilot import CopilotClient
 
-# Initialize the Anthropic client
-client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
-
-def categorize_and_summarize_entry(entry):
+async def categorize_and_summarize_entry(entry, session):
     """
     Analyze an entry and return:
     - A concise summary
@@ -35,16 +32,10 @@ Respond in this exact JSON format:
 }}"""
 
     try:
-        message = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=500,
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
-        )
+        response = await session.send_and_wait({"prompt": prompt})
         
         # Parse the response
-        response_text = message.content[0].text
+        response_text = response.data.content
         
         # Extract JSON from the response
         import re
@@ -68,50 +59,91 @@ Respond in this exact JSON format:
             "confidence": 0
         }
 
-def process_entries():
+async def process_entries():
     """Process all entries in the raw JSON file"""
     
-    # Read the input file
-    input_path = Path("c:/Users/VilhenaM/Cursor_VSCode Workspaces/ai-landscape-tracker/site/data/entries raw.json")
+    # Initialize Copilot client
+    client = CopilotClient()
+    await client.start()
+    session = await client.create_session({"model": "gpt-4.1"})
     
-    with open(input_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    
-    print(f"Processing {len(data['entries'])} entries...")
-    
-    # Process each entry
-    for i, entry in enumerate(data['entries']):
-        print(f"Processing entry {i+1}/{len(data['entries'])}: {entry.get('title', 'Untitled')}")
+    try:
+        # Read the input file
+        input_path = Path("c:/Users/VilhenaM/Cursor_VSCode Workspaces/ai-landscape-tracker/site/data/entries raw.json")
+        output_path = Path("c:/Users/VilhenaM/Cursor_VSCode Workspaces/ai-landscape-tracker/site/data/entries.json")
         
-        result = categorize_and_summarize_entry(entry)
+        with open(input_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
         
-        # Update the entry
-        entry['summary'] = result['summary']
-        entry['category'] = result['category']
-        entry['categoryConfidence'] = result['confidence']
+        # Load existing processed entries if they exist
+        existing_entries = {}
+        if output_path.exists():
+            with open(output_path, 'r', encoding='utf-8') as f:
+                existing_data = json.load(f)
+                # Create a lookup dictionary by entry ID
+                for entry in existing_data.get('entries', []):
+                    entry_id = entry.get('id')
+                    if entry_id:
+                        existing_entries[entry_id] = entry
         
-        # Progress indicator every 10 entries
-        if (i + 1) % 10 == 0:
-            print(f"  ... {i+1} entries processed")
+        print(f"Found {len(existing_entries)} existing processed entries")
+        print(f"Total entries to check: {len(data['entries'])}")
+        
+        entries_to_process = []
+        for entry in data['entries']:
+            entry_id = entry.get('id')
+            existing = existing_entries.get(entry_id)
+            
+            # Process if entry doesn't exist or has low/empty confidence
+            if not existing:
+                entries_to_process.append(entry)
+            else:
+                confidence = existing.get('categoryConfidence')
+                if confidence is None or confidence == '' or confidence < 75:
+                    entries_to_process.append(entry)
+                else:
+                    # Copy existing data to this entry
+                    entry['summary'] = existing.get('summary', '')
+                    entry['category'] = existing.get('category', 'Other')
+                    entry['categoryConfidence'] = existing.get('categoryConfidence', 0)
+        
+        print(f"Entries requiring processing: {len(entries_to_process)}")
+        
+        # Process each entry that needs it
+        for i, entry in enumerate(entries_to_process):
+            print(f"Processing entry {i+1}/{len(entries_to_process)}: {entry.get('title', 'Untitled')}")
+            
+            result = await categorize_and_summarize_entry(entry, session)
+            
+            # Update the entry
+            entry['summary'] = result['summary']
+            entry['category'] = result['category']
+            entry['categoryConfidence'] = result['confidence']
+            
+            # Progress indicator every 10 entries
+            if (i + 1) % 10 == 0:
+                print(f"  ... {i+1} entries processed")
+        
+        # Write back to the file
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        print(f"\nComplete! Processed {len(entries_to_process)} entries.")
+        print(f"Output saved to: {output_path}")
+        
+        # Print statistics
+        agentic_count = sum(1 for e in data['entries'] if e.get('category') == 'Agentic AI')
+        other_count = len(data['entries']) - agentic_count
+        avg_confidence = sum(e.get('categoryConfidence', 0) for e in data['entries']) / len(data['entries'])
+        
+        print(f"\nStatistics:")
+        print(f"  Agentic AI: {agentic_count}")
+        print(f"  Other: {other_count}")
+        print(f"  Average Confidence: {avg_confidence:.1f}")
     
-    # Write back to the file
-    output_path = Path("c:/Users/VilhenaM/Cursor_VSCode Workspaces/ai-landscape-tracker/site/data/entries.json")
-    
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
-    
-    print(f"\nComplete! Processed {len(data['entries'])} entries.")
-    print(f"Output saved to: {output_path}")
-    
-    # Print statistics
-    agentic_count = sum(1 for e in data['entries'] if e.get('category') == 'Agentic AI')
-    other_count = len(data['entries']) - agentic_count
-    avg_confidence = sum(e.get('categoryConfidence', 0) for e in data['entries']) / len(data['entries'])
-    
-    print(f"\nStatistics:")
-    print(f"  Agentic AI: {agentic_count}")
-    print(f"  Other: {other_count}")
-    print(f"  Average Confidence: {avg_confidence:.1f}")
+    finally:
+        # Clean up Copilot client
+        await client.stop()
 
 if __name__ == "__main__":
-    process_entries()
+    asyncio.run(process_entries())
