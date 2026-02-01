@@ -438,6 +438,14 @@ body {
         gap: var(--space-sm);
     }
     
+    .logo-container {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-md);
+        width: 100%;
+        justify-content: space-between;
+    }
+    
     .site-title {
         font-size: 1.2rem;
     }
