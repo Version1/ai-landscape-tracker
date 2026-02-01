@@ -16,6 +16,21 @@ def load_entries():
     with open(input_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+def load_existing_entries():
+    """Load existing processed entries if they exist"""
+    output_path = Path("c:/Users/VilhenaM/Cursor_VSCode Workspaces/ai-landscape-tracker/site/data/entries.json")
+    if output_path.exists():
+        with open(output_path, 'r', encoding='utf-8') as f:
+            existing_data = json.load(f)
+            # Create a lookup dictionary by entry ID
+            existing_entries = {}
+            for entry in existing_data.get('entries', []):
+                entry_id = entry.get('id')
+                if entry_id:
+                    existing_entries[entry_id] = entry
+            return existing_entries
+    return {}
+
 def save_entries(data):
     """Save processed entries to the output file"""
     output_path = Path("c:/Users/VilhenaM/Cursor_VSCode Workspaces/ai-landscape-tracker/site/data/entries.json")
@@ -45,10 +60,10 @@ def analyze_entry(entry):
     # Basic categorization logic
     if agentic_score >= 2:
         category = "Agentic AI"
-        confidence = min(70 + (agentic_score * 5), 95)
+        confidence = min(75 + (agentic_score * 5), 95)
     elif agentic_score == 1:
         category = "Agentic AI"
-        confidence = 60
+        confidence = 75
     else:
         category = "Other"
         confidence = 75
@@ -71,16 +86,41 @@ def main():
     data = load_entries()
     entries = data['entries']
     
-    print(f"Processing {len(entries)} entries...")
+    # Load existing processed entries
+    existing_entries = load_existing_entries()
+    
+    print(f"Found {len(existing_entries)} existing processed entries")
+    print(f"Total entries to check: {len(entries)}")
+    
+    # Identify entries that need processing
+    entries_to_process = []
+    for entry in entries:
+        entry_id = entry.get('id')
+        existing = existing_entries.get(entry_id)
+        
+        # Process if entry doesn't exist or has low/empty confidence
+        if not existing:
+            entries_to_process.append(entry)
+        else:
+            confidence = existing.get('categoryConfidence')
+            if confidence is None or confidence == '' or confidence < 75:
+                entries_to_process.append(entry)
+            else:
+                # Copy existing data to this entry
+                entry['summary'] = existing.get('summary', '')
+                entry['category'] = existing.get('category', 'Other')
+                entry['categoryConfidence'] = existing.get('categoryConfidence', 0)
+    
+    print(f"Entries requiring processing: {len(entries_to_process)}")
     print("\nThis is a placeholder script.")
     print("For accurate AI-powered categorization, each entry should be")
     print("analyzed individually with proper AI context.")
-    print("\nPlease run this with Claude to process entries properly.")
+    print("\nPlease run this with AI agent to process entries properly.")
     
-    # Process each entry (basic version)
-    for i, entry in enumerate(entries):
+    # Process each entry that needs it (basic version)
+    for i, entry in enumerate(entries_to_process):
         if (i + 1) % 50 == 0:
-            print(f"Processed {i+1}/{len(entries)} entries...")
+            print(f"Processed {i+1}/{len(entries_to_process)} entries...")
         
         result = analyze_entry(entry)
         entry['summary'] = result['summary']
@@ -95,6 +135,7 @@ def main():
     other_count = len(entries) - agentic_count
     avg_confidence = sum(e.get('categoryConfidence', 0) for e in entries) / len(entries)
     
+    print(f"\nComplete! Processed {len(entries_to_process)} entries.")
     print(f"\nStatistics:")
     print(f"  Total entries: {len(entries)}")
     print(f"  Agentic AI: {agentic_count}")

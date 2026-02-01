@@ -131,7 +131,7 @@
       "summary": "Learn how OpenAI protects user data when AI agents open links, preventing URL-based data exfiltration and prompt injection with built-in safeguards.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "2ce037f2cf1a",
@@ -251,7 +251,7 @@
       "summary": "Now in technical preview, the GitHub Copilot SDK can plan, invoke tools, edit files, and run commands as a programmable layer you can use in any application. The post Build an agent into any app wi...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "dd14cde592da",
@@ -323,7 +323,7 @@
       "summary": "Run tests, fix code, and get support—right in your workflow. Stay focused and let Copilot handle the busywork. The post A cheat sheet to slash commands in GitHub Copilot CLI appeared first on The G...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "6c3e14d38ba2",
@@ -371,7 +371,7 @@
       "summary": "Learn how I managed context to keep Copilot focused, used the Plan agent to sharpen vague requirements, and required Test Driven Development practices to catch bugs before users. The post Context w...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "e5cea1419515",
@@ -479,7 +479,7 @@
       "summary": "This release brings many of the editor’s most-loved features to theCursor CLI, along with improvements that make it easier to use. UsePlan modeto design your approach before coding. Cursor will ask...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "fb83ad6658a1",
@@ -611,7 +611,7 @@
       "summary": "By rolling out ChatGPT Enterprise company-wide, Zenken has boosted sales performance, cut preparation time, and increased proposal success rates. AI-supported workflows are helping a lean team deli...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "c8c318a4cca0",
@@ -623,7 +623,7 @@
       "summary": "Learn how custom instructions, reusable prompts, and custom agents help GitHub Copilot deliver more accurate results. The post Want better AI outputs? Try context engineering. appeared first on The...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "2b1c2b11044d",
@@ -659,7 +659,7 @@
       "summary": "OpenAI and Datadog brand graphic with the OpenAI wordmark on the left, the Datadog logo on the right, and a central abstract brown fur-like texture panel on a white background.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "f850071bccaa",
@@ -695,7 +695,7 @@
       "summary": "OpenAI for Healthcare enables secure, enterprise-grade AI that supports HIPAA compliance—reducing administrative burden and supporting clinical workflows.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "586c52ff8e2b",
@@ -863,7 +863,7 @@
       "summary": "An easy-to-remember acronym, WRAP will help you write effective issues, refine your instructions, and get the most out of Copilot coding agent. The post WRAP up your backlog with GitHub Copilot cod...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "e2c2e9ffe95b",
@@ -875,7 +875,7 @@
       "summary": "For this holiday release, we've focused entirely on fixing bugs and improving stability. This includes the core agent, layout controls, viewing code diffs, and more. We will be slowly rolling these...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "d40ada0f5c54",
@@ -911,7 +911,7 @@
       "summary": "Many of the largest software companies in the world have adoptedCursor for Enterprise. Here are some of the new features we're releasing today: Cursor can now analyze the code and context in each a...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "e064ba83d040",
@@ -983,7 +983,7 @@
       "summary": "GPT-5.2-Codex is OpenAI’s most advanced coding model, offering long-horizon reasoning, large-scale code transformations, and enhanced cybersecurity capabilities.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "031d9ca59419",
@@ -995,7 +995,7 @@
       "summary": "GPT-5.2-Codex is OpenAI’s most advanced coding model, offering long-horizon reasoning, large-scale code transformations, and enhanced cybersecurity capabilities.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "c22f1d6a28a0",
@@ -1019,7 +1019,7 @@
       "summary": "Developers can now submit apps for review and publication in ChatGPT, with approved apps appearing in a new in-product directory for easy discovery. Updated tools, guidelines, and the Apps SDK help...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "1719ff8071a3",
@@ -1067,7 +1067,7 @@
       "summary": "BNY is using OpenAI technology to expand AI adoption enterprise-wide. Through its Eliza platform, 20,000+ employees are building AI agents that enhance efficiency and improve client outcomes.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "bbbdbe4da874",
@@ -1091,7 +1091,7 @@
       "summary": "BBVA is expanding its work with OpenAI through a multi-year AI transformation program, rolling out ChatGPT Enterprise to all 120,000 employees. Together, the companies will develop AI solutions tha...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "e340ed284880",
@@ -1247,7 +1247,7 @@
       "summary": "OpenAI is collaborating with Deutsche Telekom to bring advanced, multilingual AI experiences to millions of people across Europe. ChatGPT Enterprise will also be deployed to help employees at Deuts...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "a5c7c2fc1f7d",
@@ -1907,7 +1907,7 @@
       "summary": "CRED is transforming premium customer experiences in India with OpenAI. Using GPT-powered tools, the company is improving support accuracy, reducing response times, and boosting customer satisfaction.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "2428831ed925",
@@ -1919,7 +1919,7 @@
       "summary": "Vineet Mehra, Chief Marketing Officer at Chime, s how AI is reshaping marketing into an agent-driven discipline. He explains why CMOs who champion AI literacy and thoughtful adoption will lead in t...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "73a305eeef7f",
@@ -2039,7 +2039,7 @@
       "summary": "Dai Nippon Printing (DNP) rolled out ChatGPT Enterprise across ten core departments to drive companywide adoption. Within three months, it achieved 95% faster patent research, 10x processing volume...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "b48619ce3a57",
@@ -2123,7 +2123,7 @@
       "summary": "Learn how Steuerrecht.com uses ChatGPT Business to streamline legal workflows, automate tax research, and scale client service—helping law firms boost productivity and stay competitive.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "4adeb8454dd7",
@@ -2135,7 +2135,7 @@
       "summary": "OpenAI has acquired Software Applications Incorporated, maker of Sky—a natural language interface for Mac that brings AI directly into your desktop experience. Together, we’re integrating Sky’s dee...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "8400797f7bb1",
@@ -2315,7 +2315,7 @@
       "summary": "Discover how HiBob uses ChatGPT Enterprise and custom GPTs to scale AI adoption, boost revenue, streamline HR workflows, and deliver AI-powered features in the Bob platform.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "0c618ac494cf",
@@ -2339,7 +2339,7 @@
       "summary": "OpenAI Codex is now generally available with powerful new features for developers: a Slack integration, Codex SDK, and admin tools like usage dashboards and workspace management—making Codex easier...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "dd0b9d29b10b",
@@ -2375,7 +2375,7 @@
       "summary": "OpenAI and Allied for Startups release the Hacktivate AI report with 20 actionable policy ideas to accelerate AI adoption in Europe, boost competitiveness, and empower innovators.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "341e872fea3b",
@@ -2387,7 +2387,7 @@
       "summary": "Today, we’re releasing new tools to help developers go from prototype to production faster: AgentKit, expanded evals capabilities, and reinforcement fine-tuning for agents.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "bd70fbbce74f",
@@ -2483,7 +2483,7 @@
       "summary": "Claude Sonnet 4.5 sets new benchmark records in coding, reasoning, and computer use while being Anthropic's most aligned model, accompanied by the release of the Claude Agent SDK for building capab...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "1a991eb60453",
@@ -2519,7 +2519,7 @@
       "summary": "Learn how OpenAI uses AI to enhance support, cutting response times, improving quality, and scaling to meet hypergrowth.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "6a720747190c",
@@ -2651,7 +2651,7 @@
       "summary": "By deploying ChatGPT Enterprise, ENEOS Materials transformed operations with faster research, safer plant design, and streamlined HR processes. Over 80% of employees report major workflow improveme...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "88e365e1cc26",
@@ -2795,7 +2795,7 @@
       "summary": "Codex just got faster, more reliable, and better at real-time collaboration and tackling tasks independently anywhere you develop—whether via the terminal, IDE, web, or even your phone.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "7dbf0396020b",
@@ -2867,7 +2867,7 @@
       "summary": "Discover how SafetyKit leverages OpenAI GPT-5 to enhance content moderation, enforce compliance, and outpace legacy safety systems with greater accuracy .",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "73efdbd9974f",
@@ -3095,7 +3095,7 @@
       "summary": "Built with OpenAI o3, o3-Pro, GPT-4.1, and GPT-5, Basis’ AI agents help accounting firms save up to 30% of their time and expand capacity for advisory and growth.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "95fd99a4a0f1",
@@ -3131,7 +3131,7 @@
       "summary": "GPT-5 is OpenAI’s most advanced model—transforming enterprise AI, automation, and workforce productivity in the new era of intelligent work.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "e8db75d75c71",
@@ -3263,7 +3263,7 @@
       "summary": "We’re releasing gpt-oss-120b and gpt-oss-20b—two state-of-the-art open-weight language models that deliver strong real-world performance at low cost. Available under the flexible Apache 2.0 license...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "04764b248074",
@@ -3323,7 +3323,7 @@
       "summary": "Discover how Figma is transforming digital design with AI. David Kossnick s how tools like Figma Make empower teams to prototype, collaborate, and build with AI—reshaping workflows for designers, d...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "8062a757b27c",
@@ -3371,7 +3371,7 @@
       "summary": "Discover how Outtake uses GPT-4.1 and OpenAI o3 to power AI agents that detect and resolve digital threats 100x faster than before.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "5fe77dcb05a2",
@@ -3479,7 +3479,7 @@
       "summary": "Introducing ChatGPT agent: it thinks and acts, using tools to complete tasks like research, bookings, and slideshows—all with your guidance.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "c70944839a82",
@@ -3515,7 +3515,7 @@
       "summary": "OpenAI invites researchers to its Bio Bug Bounty. Test the ChatGPT agent’s safety with a universal jailbreak prompt and win up to $25,000.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "5d441265997e",
@@ -3599,7 +3599,7 @@
       "summary": "Learn how Genspark built a $36M ARR AI product in 45 days—with no-code agents powered by GPT-4.1 and OpenAI Realtime API.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "abfbe8801e5a",
@@ -3611,7 +3611,7 @@
       "summary": "Today, OpenAI, in partnership with Mandala Partners, is sharing the OpenAI AI Economic Blueprint for Australia. At a time when boosting productivity has emerged as a national priority for Australia...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "65f09539bb90",
@@ -3683,7 +3683,7 @@
       "summary": "OpenAI and Mattel are partnering to integrate AI into iconic brands such as Barbie and Hot Wheels, aiming to enhance creative development, streamline workflows, and create new ways for fans to engage.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "cc3f4b9ae6e4",
@@ -3791,7 +3791,7 @@
       "summary": "New features in the Responses API: Remote MCP, image gen, Code Interpreter, and more. Powering faster, smarter agents with GPT-4o & o-series models, plus new features for reliability and efficiency.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "2a7169ad396d",
@@ -4055,7 +4055,7 @@
       "summary": "OpenAI o3 and OpenAI o4-mini combine state-of-the-art reasoning with full tool capabilities—web browsing, Python, image and file analysis, image generation, canvas, automations, file search, and me...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "9d27b9bb518f",
@@ -4115,7 +4115,7 @@
       "summary": "BrowseComp: a benchmark for browsing agents.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "f117e56bdee8",
@@ -4175,7 +4175,7 @@
       "summary": "We introduce PaperBench, a benchmark evaluating the ability of AI agents to replicate state-of-the-art AI research.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "f88c3ddd9b68",
@@ -4211,7 +4211,7 @@
       "summary": "Moving from intent-based bots to proactive AI agents.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "bfdff029f621",
@@ -4259,7 +4259,7 @@
       "summary": "Hebbia’s deep research automates 90% of finance and legal work, powered by OpenAI.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "3a641c838ee2",
@@ -4319,7 +4319,7 @@
       "summary": "For the first time, developers can also instruct the text-to-speech model to speak in a specific way—for example, “talk like a sympathetic customer service agent”—unlocking a new level of customiza...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "a89fe41e3bcc",
@@ -4367,7 +4367,7 @@
       "summary": "Recommendations build on OpenAI’s Economic Blueprint to strengthen America’s AI leadership.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "21d4bd8a7a0a",
@@ -4391,7 +4391,7 @@
       "summary": "We’re evolving our platform to help developers and enterprises build useful and reliable agents.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "81f957137cd3",
@@ -4511,7 +4511,7 @@
       "summary": "Endex builds the future of financial analysis, powered by OpenAI’s reasoning models.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "ea19c9e59ba2",
@@ -4679,7 +4679,7 @@
       "summary": "OpenAI looks forward to engaging with global leaders on AI’s role in shaping innovation and economic prosperity.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "e719c912ff37",
@@ -4751,7 +4751,7 @@
       "summary": "An agent that uses reasoning to synthesize large amounts of online information and complete multi-step research tasks for you. Available to Pro users today, Plus and Team next.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "10f10e6dc178",
@@ -4823,7 +4823,7 @@
       "summary": "A research preview of an agent that can use its own browser to perform tasks for you. Available to Pro users in the U.S.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "c6a246028e04",
@@ -4847,7 +4847,7 @@
       "summary": "A universal interface for AI to interact with the digital world.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "ab01bb9f7899",
@@ -4991,7 +4991,7 @@
       "summary": "Elon Musk’s latest legal filing against OpenAI marks his fourth attempt in less than a year to reframe his claims. However, his own words and actions speak for themselves—in 2017, Elon not only wan...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "4f2e29693e4b",
@@ -5375,7 +5375,7 @@
       "summary": "We introduce MLE-bench, a benchmark for measuring how well AI agents perform at machine learning engineering.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "b43037d7d850",
@@ -5495,7 +5495,7 @@
       "summary": "Altera uses GPT-4o to build a new area of human collaboration.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "450a8abfc03e",
@@ -6239,7 +6239,7 @@
       "summary": "MavenAGI is a new software company for the AI era. They recently launched an AI customer service agent, built on the flexibility of GPT-4, which a number of companies like Tripadvisor, Clickup and ...",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "54a045bbc5a4",
@@ -6575,7 +6575,7 @@
       "summary": "Klarna is using AI to revolutionize personal shopping, customer service, and employee productivity.",
       "category": "Agentic AI",
       "tags": [],
-      "categoryConfidence": 60
+      "categoryConfidence": 75
     },
     {
       "id": "cc62cb6f4d9d",
