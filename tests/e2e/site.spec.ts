@@ -11,8 +11,8 @@ test.describe('Agentic AI Landscape Tracker - Site Tests', () => {
   });
 
   test('displays header with logo and title', async ({ page }) => {
-    // Check for Version 1 logo
-    await expect(page.locator('.logo-text')).toContainText('VERSION 1');
+    // Check for Version 1 logo image
+    await expect(page.locator('.logo-image')).toBeVisible();
     
     // Check for site title
     await expect(page.locator('.site-title')).toContainText('Agentic AI Landscape Tracker');
@@ -80,9 +80,13 @@ test.describe('Agentic AI Landscape Tracker - Site Tests', () => {
   test('category filter works', async ({ page }) => {
     await page.waitForSelector('.entry-card', { timeout: 5000 });
     
+    // First reset to "All Categories" to get true initial count
+    await page.selectOption('#category-filter', 'all');
+    await page.waitForTimeout(500);
+    
     const initialCount = await page.locator('.entry-card').count();
     
-    // Select a specific category
+    // Select a specific category (not "all")
     await page.selectOption('#category-filter', { index: 1 });
     
     await page.waitForTimeout(500);
